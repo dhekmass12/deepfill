@@ -7,3 +7,8 @@ Install requirements:
 ```python
 pip install -r requirements.txt
 ```
+
+Install neuralgym
+```python
+pip install git+https://github.com/JiahuiYu/neuralgym
+```

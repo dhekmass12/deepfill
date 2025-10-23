@@ -4,7 +4,7 @@ num_gpus_per_job: 1  # number of gpus each job need
 num_cpus_per_job: 4  # number of gpus each job need
 num_hosts_per_job: 1
 memory_per_job: 32  # number of gpus each job need
-gpu_type: 'nvidia-tesla-p100'
+gpu_type: 'nvidia-dgx-1' # default: nvidia-tesla-p100
 
 # parameters
 name: places2_gated_conv_v100  # any name
@@ -12,7 +12,7 @@ model_restore: ''  # logs/places2_gated_conv
 dataset: 'celebahq'  # 'tmnist', 'dtd', 'places2', 'celeba', 'imagenet', 'cityscapes'
 random_crop: False  # Set to false when dataset is 'celebahq', meaning only resize the images to img_shapes, instead of crop img_shapes from a larger raw image. This is useful when you train on images with different resolutions like places2. In these cases, please set random_crop to true.
 val: False  # true if you want to view validation results in tensorboard
-log_dir: logs/full_model_celebahq_256
+log_dir: logs/celebahq_256
 
 gan: 'sngan'
 gan_loss_alpha: 1
@@ -22,10 +22,10 @@ random_seed: False
 padding: 'SAME'
 
 # training
-train_spe: 4000
-max_iters: 100000000
+train_spe: 10 # default 4000, 20000
+max_iters: 100 # default: 100000000 
 viz_max_out: 10
-val_psteps: 2000
+val_psteps: 10 # default: 2000, 10000
 
 # data
 data_flist:

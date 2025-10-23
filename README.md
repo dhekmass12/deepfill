@@ -12,3 +12,7 @@ Install neuralgym
 ```python
 pip install git+https://github.com/JiahuiYu/neuralgym
 ```
+Make flist for train, val, test:
+```python
+python flist_maker.py
+```
